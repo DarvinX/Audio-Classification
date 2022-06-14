@@ -42,7 +42,7 @@ void loop() {
       perform_fft();
       normalise_data();
       pca.transform(sample, pca_output);
-      Serial.print(clf.predict(pca_output));
+      clf.predict(pca_output) ? Serial.println("Clapped") : Serial.println("Snapped");
     }
     reset_adc();
     sei();
